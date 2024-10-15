@@ -26,6 +26,7 @@
 
 #include "types.h"
 #include "matrix.h"
+#include "interface.h"
 #include "metaspu/metaspu.h"
 
 class EMUFILE;
@@ -290,8 +291,8 @@ private:
 	FILE *spufp;
 };
 
-void WAV_End();
-bool WAV_Begin(const char* fname, WAVMode mode=WAVMODE_CORE);
+extern "C" EXPORTED void WAV_End();
+extern "C" EXPORTED bool WAV_Begin(const char* fname, WAVMode mode=WAVMODE_CORE);
 bool WAV_IsRecording(WAVMode mode=WAVMODE_ANY);
 void WAV_WavSoundUpdate(void* soundData, int numSamples, WAVMode mode=WAVMODE_CORE);
 

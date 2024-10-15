@@ -41,6 +41,7 @@
 #include "NDSSystem.h"
 #include "emufile.h"
 #include "matrix.h"
+#include "interface.h"
 #include "utils/bits.h"
 
 
@@ -1916,12 +1917,12 @@ bool WavWriter::isRecording() const
 
 static WavWriter wavWriter;
 
-void WAV_End()
+extern "C" EXPORTED void WAV_End()
 {
 	wavWriter.close();
 }
 
-bool WAV_Begin(const char* fname, WAVMode mode)
+extern "C" EXPORTED bool WAV_Begin(const char* fname, WAVMode mode)
 {
 	WAV_End();
 

@@ -1422,7 +1422,7 @@ static void execHardware_hblank()
 	//emulation housekeeping. for some reason we always do this at hblank,
 	//even though it sounds more reasonable to do it at hstart
 	SPU_Emulate_core();
-	driver->AVI_SoundUpdate(SPU_core->outbuf,spu_core_samples);
+	// driver->AVI_SoundUpdate(SPU_core->outbuf,spu_core_samples);
 	WAV_WavSoundUpdate(SPU_core->outbuf,spu_core_samples);
 }
 

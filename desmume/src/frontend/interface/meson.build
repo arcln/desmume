@@ -20,6 +20,11 @@ dep_openal = dependency('openal', required: get_option('openal'))
 dep_alsa = dependency('alsa', required: false)
 dep_soundtouch = dependency('soundtouch', required: false)
 
+add_global_arguments('--target=aarch64-apple-darwin', language: ['c', 'cpp'])
+add_global_arguments('-march=armv8a', language: ['c', 'cpp'])
+add_global_link_arguments('-Wl,-arch', language: ['c', 'cpp'])
+add_global_link_arguments('-Wl,arm64', language: ['c', 'cpp'])
+
 if get_option('wifi')
   add_global_arguments('-DEXPERIMENTAL_WIFI_COMM', language: ['c', 'cpp'])
 endif

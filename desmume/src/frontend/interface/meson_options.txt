@@ -5,7 +5,7 @@ option('openal',
 )
 option('frontend-gtk',
   type: 'boolean',
-  value: true,
+  value: false,
   description: 'Enable GTK frontend',
 )
 option('frontend-cli',
