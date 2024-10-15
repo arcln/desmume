@@ -1744,7 +1744,7 @@ void SPU_Emulate_user(bool mix)
 		processedSampleCount = SPU_DefaultPostProcessSamples(postProcessBuffer, freeSampleCount, _currentSynchMode, _currentSynchronizer);
 	}
 	
-	soundProcessor->UpdateAudio(postProcessBuffer, processedSampleCount);
+	// soundProcessor->UpdateAudio(postProcessBuffer, processedSampleCount);
 	WAV_WavSoundUpdate(postProcessBuffer, processedSampleCount, WAVMODE_USER);
 }
 
